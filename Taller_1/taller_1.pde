@@ -45,7 +45,7 @@ void setup() {
 
 void draw() {
 
-  image(img, 0, 50, 300, 300); // Displays the image from point (0,0)
+  image(img, 0, 50, 300, 300);
   pg.beginDraw();
   // aqui va el codigo
   img_gray = toGrayscale(img, 1);
