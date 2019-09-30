@@ -20,8 +20,8 @@ Emplear dos [canvas](https://processing.org/reference/PGraphics.html), uno para 
 
 |          Integrante         |  github nick  |
 |-----------------------------|---------------|
-|  Juan Sebasitan Becerra   |   jsbecerrab    |
-| Juan Sebasitan Peña |   jspenaq     |
+|  Juan Sebastián Becerra   |   jsbecerrab    |
+| Juan Sebastián Peña |   jspenaq     |
 
 
 ## Discusión
