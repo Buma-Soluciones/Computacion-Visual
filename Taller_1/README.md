@@ -1,11 +1,10 @@
-# Computacion Visual 2019 - 2S 
-## Taller de análisis de imágenes por software
+# Taller de análisis de imágenes por software
 
-### Propósito
+## Propósito
 
 Introducir el análisis de imágenes/video en el lenguaje de [Processing](https://processing.org/).
 
-### Tareas
+## Tareas
 
 Implementar las siguientes operaciones de análisis para imágenes/video:
 
@@ -17,7 +16,7 @@ Implementar las siguientes operaciones de análisis para imágenes/video:
 
 Emplear dos [canvas](https://processing.org/reference/PGraphics.html), uno para desplegar la imagen/video original y el otro para el resultado del análisis.
 
-### Integrantes
+## Integrantes
 
 |          Integrante         |  github nick  |
 |-----------------------------|---------------|
