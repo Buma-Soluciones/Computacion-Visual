@@ -364,3 +364,13 @@ void keyPressed() {
     loop();
   }
 }
+
+// Referencias:
+// https://processing.org/reference/loadPixels_.html
+// https://processing.org/examples/histogram.html
+// https://processing.org/examples/convolution.html
+// http://setosa.io/ev/image-kernels/
+// https://processing.org/tutorials/typography/
+// https://processing.org/reference/libraries/video/Movie.html
+// https://forum.processing.org/one/topic/text-in-combination-with-pgraphics.html
+
