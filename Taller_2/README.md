@@ -24,7 +24,7 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 
 | Ilusión | Categoria | Referencia | Tipo de interactividad (si aplica) | URL código base (si aplica) |
 |---------|-----------|------------|------------------------------------|-----------------------------|
-|         |           |            |                                    |                             |
+|     Cafe wall    |           |            |                                    |                             |
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
