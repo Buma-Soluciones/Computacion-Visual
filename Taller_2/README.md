@@ -26,7 +26,7 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 |---------|-----------|------------|------------------------------------|-----------------------------|
 |Cafe wall|Ilusion geometrica optica|https://en.wikipedia.org/wiki/Caf%C3%A9_wall_illusion |Mover el cursor de izquierda a derecha|    https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/cafe_wall.js |
 |Poggendorff Ilussion|Ilusion geometrica optica|https://en.wikipedia.org/wiki/Poggendorff_illusion|Mantener presionado el cursor|https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/poggendorff.js|
-|         |           |            |                                    |                             |
+|PenRose Triangle|Ilusion paradojica|https://en.wikipedia.org/wiki/Penrose_triangle|Dar click|https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/PenroseTriangle.js|
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
