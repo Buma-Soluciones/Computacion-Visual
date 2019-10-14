@@ -33,6 +33,5 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 
 2.
 
-* Blabla
-* Blabla
-* Blabla
+* El programa cuenta con un menu para acceder a las diferentes ilusiones
+* "Necker Cube" esta en un carpeta aparte debido a que producia un error con la ilusion "Stroboscopic Motion"
