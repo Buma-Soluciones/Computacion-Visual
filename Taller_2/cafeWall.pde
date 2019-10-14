@@ -5,10 +5,10 @@ int lineyHeight = 2; // stroke width for vertical lines
 int rows = 9; // number of rows to draw
 int canvasWidth = 400; // canvas width
 
-void settings(){
+void settings_cafe(){
   size(canvasWidth, (cHeight + lineyHeight) * rows + lineyHeight);
 }
-void setup(){
+void setup_cafe(){
   
   background(136,136,136);
   smooth();
@@ -34,9 +34,9 @@ void drawRow(int row) {
             );
         }
     }
-void draw(){ }
+void draw_cafe(){ }
 
-void mouseMoved(){
+void mouseMoved_cafe(){
   background(136,136,136);
   for (int i = 0; i < rows; i = i + 1) {
             drawRow(i);
