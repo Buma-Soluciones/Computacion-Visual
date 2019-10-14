@@ -2,7 +2,6 @@ int mode = 0;
 
 PGraphics pg;
 PFont myFont;
-PImage img;
 
 void setup() {
   background(0);
@@ -29,27 +28,13 @@ void draw() {
     stroboscopicMotion();
     break;
   case 5:
-
+    cafeWall();
     break;
   case 6:
-
     break;
   default:
     background(0);
   }
-}
-
-//void createCanvas() {
-//pg = createGraphics(300, 300); // canvas original
-//}
-
-void textCavas(String t1, String t2, String t3, String t4) {
-  textAlign(CENTER);
-  textSize(16);
-  text(t1, width/4, height/2 - 10);
-  text(t2, width - width/4, height/2  - 10);
-  text(t3, width/4, height - 10);
-  text(t4, width - width/4, height - 10);
 }
 
 void menu() {
@@ -67,7 +52,7 @@ void menu() {
   text("Illusions", width/2, height/4 - 10);
   textSize(24);
   textAlign(CENTER, CENTER);
-  String options = "1: Poggendorff Ilussion\n2: PenRose Triangle\n3: Anstis\n4: stroboscopicMotion\n5: Cafe\n6: something\n0: Menu";
+  String options = "1: Poggendorff Ilussion\n2: PenRose Triangle\n3: Stuart Anstis ilussion\n4: Stroboscopic Motion\n5: Cafe Wall\n6: Necker Cube\n0: Menu";
   text(options, width/2, height/4 + 140);
 
   textSize(32);
@@ -227,11 +212,53 @@ void stroboscopicMotion() {
   firstPair = !firstPair;
 }
 
+int cWidth = 30; // cell width
+int cHeight = 26; // cell height
+int linexHeight = 1; // stroke width for horizontal
+int lineyHeight = 2; // stroke width for vertical lines
+int rows = 15; // number of rows to draw
+int canvasWidth = 600; // canvas width
 
+void cafeWall() {
+  background(136, 136, 136);
+  pg.beginDraw();
+  mouseMoved();
+  pg.endDraw();
+  image(pg, 0, 50);
+}
 
+void drawRow(int row) {
+  int yPos = row * (cHeight + lineyHeight) + lineyHeight;
+  int numCells = ceil(canvasWidth / cWidth) + 3;
+  for (int i = -80; i < numCells; i = i + 1) {
+    if (i % 2 == 0) {
+      pg.fill(0);
+    } else {
+      pg.fill(255);
+    }
+    pg.noStroke();
+    int pos = row % 4;
+    if (pos == 3) pos = 1;
+    pg.rect(
+      i * (cWidth + linexHeight) - pos * mouseX / 15 % (2 * cWidth) + 15, 
+      yPos, 
+      cWidth, 
+      cHeight
+      );
+  }
+}
+
+void mouseMoved() {
+  if (mode == 5) {
+    pg.background(136, 136, 136);
+    for (int i = 0; i < rows; i = i + 1) {
+      drawRow(i);
+    }
+  }
+}
 
 void mouseClicked() {
-  //cada vez que se da click los colores se van rotando para generar la ilusion
+  // cada vez que se da click los colores se van rotando para generar la ilusion
   if (mode == 2) {
     aux = yellow;
     yellow = blue;
@@ -241,12 +268,8 @@ void mouseClicked() {
 }
 
 void keyPressed() {
-  if (mode == 1 && (key == 'a' || key == 'A')) {
-    redraw();
-  }
   if (key == '0') {
     mode = 0; // menu
-    //redraw();  // or loop()
   } else if (key == '1') {
     mode = 1; // poggendorff
     pg = createGraphics(600, 500);
@@ -260,9 +283,14 @@ void keyPressed() {
   } else if (key == '4') {
     mode = 4; // stroboscopic
     pg = createGraphics(600, 600);
+  } else if (key == '5') {
+    mode = 5; // cafeWall
+    pg = createGraphics(canvasWidth, (cHeight + lineyHeight) * rows + lineyHeight);
+  } else if (key == '6') {
+    mode = 6; // necker cube
+    pg = createGraphics(600, 600);
   }
   frameRate(60);
-  //mode = key;
 }
 
 // Referencias:
