@@ -77,18 +77,18 @@ void triangleRaster() {
         for (int x = round(-pow(2, n-1)); x < pow(2, n-1); x++) {
       for (int y = round(-pow(2, n-1)); y < pow(2, n-1); y++) {
         int c = 0;
-        if (inside(x+0.25, y+0.25) == true)
+        if (core(x+0.25, y+0.25) == true)
           c += 1;
-        if (inside(x+0.75, y+0.25) == true)
+        if (core(x+0.75, y+0.25) == true)
           c += 1;
-        if (inside(x+0.25, y+0.75) == true)
+        if (core(x+0.25, y+0.75) == true)
           c += 1;
-        if (inside(x+0.75, y+0.75) == true)
+        if (core(x+0.75, y+0.75) == true)
           c += 1;
         if (c > 0) {
-          float w1 = edge(v2, v3, new Vector(x+0.5,y+0.5));
-          float w2 = edge(v3, v1, new Vector(x+0.5,y+0.5));
-          float w3 = edge(v1, v2, new Vector(x+0.5,y+0.5));
+          float w1 = border(v2, v3, new Vector(x+0.5,y+0.5));
+          float w2 = border(v3, v1, new Vector(x+0.5,y+0.5));
+          float w3 = border(v1, v2, new Vector(x+0.5,y+0.5));
           w1 /= area;
           w2 /= area;
           w3 /= area;
@@ -147,21 +147,21 @@ void drawTriangleHint() {
   pop();
 }
 
-float edge(Vector a, Vector b, Vector c){
+float border(Vector a, Vector b, Vector c){
   return (c.x()-node.location(a).x())*(node.location(b).y()-node.location(a).y()) - (c.y()-node.location(a).y())*(node.location(b).x()-node.location(a).x());
 }
 
-boolean inside(float x, float y) {
-  boolean inside = true;
-  inside &= (edge(v1, v2, new Vector(x,y)) <= 0);
-  inside &= (edge(v2, v3, new Vector(x,y)) <= 0);
-  inside &= (edge(v3, v1, new Vector(x,y)) <= 0);
+boolean core(float x, float y) {
+  boolean core1 = true;
+  core1 &= (border(v1, v2, new Vector(x,y)) <= 0);
+  core1 &= (border(v2, v3, new Vector(x,y)) <= 0);
+  core1 &= (border(v3, v1, new Vector(x,y)) <= 0);
   
-  boolean inside2 = true;
-  inside2 &= (edge(v1, v2, new Vector(x,y)) >= 0);
-  inside2 &= (edge(v2, v3, new Vector(x,y)) >= 0);
-  inside2 &= (edge(v3, v1, new Vector(x,y)) >= 0);
-  return inside||inside2;
+  boolean core2 = true;
+  core2 &= (border(v1, v2, new Vector(x,y)) >= 0);
+  core2 &= (border(v2, v3, new Vector(x,y)) >= 0);
+  core2 &= (border(v3, v1, new Vector(x,y)) >= 0);
+  return core1||core2;
 }
 
 
