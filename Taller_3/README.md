@@ -28,6 +28,11 @@ Implemente la función ```triangleRaster()``` del sketch adjunto para tal efecto
 
 ## Discusión
 
-* Blabla
-* Blabla
-* Blabla
+* Se rasteriza un triangulo tan pronto inicia el programa
+* Con la tecla 'g', se oculta la cuadricula (grid)
+* Con la tecla 't', 
+* Con la tecla 's', 
+* Con la tecla 'd', 
+* Con la teclas '+' y '-', 
+* 
+* 
